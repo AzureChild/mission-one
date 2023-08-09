@@ -1,0 +1,263 @@
+@font-face {font-family: MatrixII; src:url(fonts/yu-gi-oh-matrix.ttf);}
+@font-face {font-family: MatrixIIBold; src:url(fonts/yu-gi-oh-matrix-bold.ttf);}
+
+/* Resetting */
+* {box-sizing: border-box; font-family: MatrixIIBold; margin: 0;}
+
+body
+{
+    background-repeat: no-repeat;
+    background-image: radial-gradient(ellipse farthest-corner at right bottom, white 50%, #0066ff, #003380, #003380);
+    height: 100%;
+}
+
+header
+{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 18px;
+    padding-left: 30%;
+    /* background-color: black; */
+    color: white;
+    text-shadow: 0px 0px 8px #990000, 0px 0px 8px #990000, 0px 0px 8px #990000;
+    /* width: 100%; */
+}
+
+footer
+{
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    transition: padding 1s, font-size 1s;
+    transition-delay: 0.1s;
+    transition-timing-function: ease-out;
+}
+
+footer > a
+{
+    padding: 0px 40px;
+}
+
+footer:hover
+{
+    font-size: 32px;
+    padding: 18px;
+}
+
+/* Image bar that will animate a fade in/out. Animation CSS handled near the end of document */
+aside
+{
+    display: flex;
+    justify-content: end; /*This snaps the images to the far right to align them with the content bar and pushes */
+    min-width: 30%;        /*everything else off the screen */
+    opacity: 1;
+    height: 100vh;
+    object-fit: contain;
+}
+
+main
+{
+    display: flex;
+    width: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover
+{
+    color: goldenrod;
+}
+
+#sidebar
+{
+    margin-top: 30px;
+    left: 20%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    /* background-color: blue; */
+}
+
+#sidebar > ul
+{
+    padding: 0px;
+}
+
+/* Generic navLink button style, over ride where necessary */
+.navLink
+{
+    list-style: none;
+    padding: 6px 12px;
+    margin: 3px;
+    color: white;
+    background-color: #336699;
+}
+
+.navLink:hover
+{
+    background-color: #003380;
+}
+
+/* The main area for displaying the articles */
+#content
+{
+    /* background-color: red; */
+    margin: 30px 50px;
+    /* width: 100%; */
+    font-family: MatrixII;
+}
+
+#content > dl > dt
+{
+    font-size: 20px;
+    text-shadow: 0px 0px 1px #003380;
+    font-family: MatrixIIBold;
+}
+
+#content > p, dd
+{
+    margin: 6px 3px;
+    font-size: 19px;
+}
+
+#content > img
+{
+    margin: 0px 3px;
+}
+
+
+/* Not sure if I'll use this yet but used to bookmark sections inside the content area with a consistent image size */
+/* Use as placeholder to begin with */
+.imageBookmark
+{
+    color: aliceblue;
+    text-shadow: 0px 0px 8px #990000, 0px 0px 8px #990000, 0px 0px 8px #990000;
+    border: 3px dashed #996600; 
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    margin: 3px;
+    padding-left: 12px;
+    width: 100%;
+    /* background-color: grey;*/
+    background-position: center;
+    height: 70px;
+}
+
+/* This is to keep consistency of images of cards contained within the article itself */
+.imageContainer
+{
+    background-color: grey;
+    height: 190px;
+    width: 130px;
+}
+
+/* Indecision means I ended up wanting another way to display images. */
+.imageSquare
+{
+    background-color: grey;
+    height: 190px;
+    width: 190px;
+}
+
+/* I was using inline css to do this but it was horrible with responsive code. There has to be a better way to do this.*/
+.contentIntroImg
+{
+    background-image: url(images/divine.jpg);
+}
+
+.contentDeckImg
+{
+    background-image: url(images/civ.jpg);
+}
+
+.contentComboImg
+{
+    background-image: url(Images/pMK.jpg);
+}
+
+/* Attempt to set up an animation that will cycle fading the left hand images in and out. */
+
+.animationImgs
+{
+    position: fixed;
+    animation: imageFader 28s infinite;
+}
+
+#blueSkyAnim
+{
+    opacity: 0;
+    animation-delay: 0s;
+}
+
+#redAnim
+{
+    opacity: 0;
+    animation-delay: 7s;
+}
+
+#spectrumAnim
+{
+    opacity: 0;
+    animation-delay: 14s;
+}
+
+#astramAnim
+{
+    opacity: 0;
+    animation-delay: 21s;
+}
+
+/* Okay idea here is to set 5 keyframes for fading in and out and then delay every image as required.
+    0-25 fade in time
+    25-50 wait time visible
+    50-75 fade out time
+    75-100 wait for other images to cycle - effectively Delay: The Sequel*/
+
+    /* Changed to solution found on Google, not perfect but working okayish */
+@keyframes imageFader
+{
+    0%   {opacity: 0;}
+    11%  {opacity: 1;}
+    25%  {opacity: 0;}
+    93%  {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+/* The fixed bar messes up nearly instantly beyond non-full screen. Oops. */
+@media screen and (max-width: 1344px)
+{
+    aside
+    {
+        display: none;
+    }
+
+    #sidebar
+    {
+        left: 6px;
+    }
+
+    #content
+    {
+        margin-left: 160px;
+    }
+}
+
+/* There gotta be a better way */
+@media screen and (max-width: 800px)
+{
+    .contentIntroImg, .contentDeckImg, .contentComboImg
+    {
+        background-color: #003380;
+        background-image: none;
+    }
+}

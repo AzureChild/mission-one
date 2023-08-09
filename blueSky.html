@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="blueSky.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Legacy of the World</title>
+</head>
+
+<body>
+    <header>
+        <a href="blueSky.html">
+        <h3>Legacy of the World</h3>
+        <h5>Playing Mekk-Knights in Yu-Gi-Oh</h5>
+        </a>
+    </header>
+
+    <main>
+
+        <aside>
+            <!-- This is going to get messy and I'm not 100% sure what I'm doing but the idea is I will set a 
+            div for each image I want to cycle and then fade them in and out individually. I hope this works. -->
+       
+        <div class="animationImgs" id="astramAnim"> <img src="images/astram.png"/> </div>
+        <div class="animationImgs" id="spectrumAnim"> <img src="images/spectrumSupreme.png"/> </div>
+        <div class="animationImgs" id="redAnim"> <img src="Images/red.png"/> </div>
+        <div class="animationImgs" id="blueSkyAnim"> <img src="Images/blueSky.png"/> </div>
+
+        
+        </aside>
+
+        <!-- Navigation sidebar -->
+        <div id="sidebar">
+            <ul>
+                <li class="navLink"><a href="#markIntro">Home</a></li>
+                <li class="navLink"><a href="#markDeck">Deckbuilding</a></li>
+                <li class="navLink"><a href="#markCombo">Combos</a></li>
+                <li class="navLink">Tech Options</li>
+                <li class="navLink">Variations</li>
+            </ul>
+        </div>
+        <!-- Actual content -->
+        <div id="content">
+            <!-- Using inline style partly just to practice but also to take precedence over the grey box. Should probably be changed
+            back to external css so that I can remove the actual image at smaller view widths to stop it overlapping with the title
+            text. -->
+            <div id="markIntro" class="imageBookmark contentIntroImg">Introduction</div>
+            <p>If the descriptions get short and trail off it is because I am mainly just trying to 
+                fill this area with text and images to test and demonstrate my navigation sidebar.
+                That said, Mekk-Knights are an archetype from the Yu-Gi-Oh Trading Card Game. In today's
+                meta they are definitely overlooked due to power creep but they still retain some
+                powerful and unique abilities that allow them to compete at a rogue level and can even
+                surprise and defeat stronger archetypes through shock value and unfamiliarity.
+            </p><br>
+            <p>Their archetypal effect gives inherent summoning from hand and their access to an in-engine,
+                 searchable Emergency Teleport gives them a limited ability to swarm the field with high attack monsters. 
+                 This is bolstered with some strong, in-engine backrow support in cards like 'World Legacy's Secret'
+                 and 'World Legacy Key'. Combined with their column mechanics the result is a fun and unique
+                 mid-range strategy that has multiple options for Normal Summoning and playing Second.
+            </p>
+            <img class="imageContainer" src="images/cards/avramCard.png" title="Check THIS out!">
+            <p>"Check THIS out!" - Mekk-Knight Avram, 2018</p>
+
+            <div id="markDeck" class="imageBookmark contentDeckImg">Deckbuilding</div>
+            <img class="imageSquare" src="Images/cards/pNightfall.png" title="Purple Nightfall">
+            <img class="imageSquare" src="Images/cards/bSky.png" title="Blue Sky">
+            <img class="imageSquare" src="Images/cards/girsu.jpg" title="Girsu, the Orcust Mekk-Knight">
+            <img class="imageSquare" src="Images/cards/iEclipse.png" title="Indigo Eclipse">
+
+            <dl>
+                <dt>Purple Nightfall x3</dt>
+                <dd>The backbone of any Mekk-Knight strategy and arguably our best starter. It searches the rest
+                    of our Mekk-Knights to start combos, in a pinch it can banish another Mekk-Knight to protect it
+                    and it returns in every standby phase to a column of our choice to continue gaining advantage
+                    or can be used in conjunction with our backrow to ensure columns are locked down during our turn
+                    if the opponent still has board presence. When searching Blue Sky it also self-clears itself
+                    from the column to continue plays. In some circumstances it can also be used for Rank 8 plays
+                    with another Nightfall or with Eclipse. Highly recommended to play at 3 copies.
+                </dd>
+
+                <dt>Blue Sky x2-3</dt>
+                <dd>
+                    Nightfall's best friend and a common search target but also a perfectly fine starter card. Blue
+                    Sky can search Nightfall when needed or get any other name (usually Girsu) for extension. The
+                    downsides are that it cannot clear its own column and requires an opponents card to get searches.
+                    This card is one of the best reasons to choose to go second with a Mekk-Knight Strategy. 2 copies
+                    is fine as it is a weaker opener - especially for mixed engines but 3 will help maintain consistency.
+                </dd>
+
+                <dt>Girsu, the Orcust Mekk-Knight x1-2</dt>
+                <dd>
+                    Arguably our best Normal Summon, he is unfortunately still stuck in semi-limited prison. Despite
+                    that, you may want to keep it at 1 or 2 copies anyway. Girsu does a lot - sending World Legacy cards
+                    to enable Keymaster lines and acting as his own extender whilst setting up columns for other Mekk-Knights
+                    to summon into. With a bit of deckbuilding he can even operate as a one card Zeus. However outside of this
+                    opening just Girsu is not exactly full combo, which is why it is best searched off of Nightfall. The fact
+                    he is a normal summonable Mekk-Knight also cannot be overlooked as sometimes column space is at a premium.
+                    
+                    Any hand containing 2 of these 3 above cards is one of the strongest in-engine openers we have and typically
+                    will end on I.P Masquerena plus Keymaster.
+                </dd>
+            </dl>
+            
+            <div id="markCombo" class="imageBookmark contentComboImg">Combos</div>
+            <img class="imageContainer" src="images/cards/libCard.png" title="Lib the World Keymaster">
+            <img class="imageContainer" src="images/cards/ipCard.jpg" title="I.P Masquerena">
+            <p>Coming Soon!<br>
+                Because I should be doing work instead of nerd emoji about trading cards.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://www.twitch.tv/" target="_blank"><i class="fa fa-twitch"></i></a>
+        <a href="https://www.youtube.com/watch?v=yRFDNozkiCs" target="_blank"><i class="fa fa-youtube"></i></a>
+        <a href="https://store.steampowered.com/app/1449850/YuGiOh_Master_Duel/" target="_blank"><i class="fa fa-steam"></i></a>
+        <a href="blueSkyContact.html">CONTACT ME</a>
+    </footer>
+</body>
+</html>

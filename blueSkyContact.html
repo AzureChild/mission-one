@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+
+    <style>
+
+        @font-face {font-family: MatrixII; src:url(fonts/yu-gi-oh-matrix.ttf);}
+        @font-face {font-family: MatrixIIBold; src:url(fonts/yu-gi-oh-matrix-bold.ttf);}
+
+        /* Resetting */
+        * {box-sizing: border-box; font-family: MatrixIIBold; margin: 0;}
+
+        body
+        {
+            background-repeat: no-repeat;
+            background-image: radial-gradient(ellipse farthest-corner at right bottom, white 50%, #0066ff, #003380, #003380);
+            height: 100%;
+        }
+
+        header
+        {
+            text-align: center;
+            font-size: 20px;
+            padding-top: 18px;
+            padding-left: 30%;
+            /* background-color: black; */
+            color: white;
+            text-shadow: 0px 0px 8px #990000, 0px 0px 8px #990000, 0px 0px 8px #990000;
+            /* width: 100%; */
+        }
+        /* With better css set up I could just refer to the same external css */
+        footer
+        {
+            position: fixed;
+            bottom: 0px;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+            transition: padding 1s, font-size 1s;
+            transition-delay: 0.1s;
+            transition-timing-function: ease-out;
+        }
+
+        footer > a
+        {
+            padding: 0px 40px;
+        }
+
+        footer:hover
+        {
+            font-size: 32px;
+            padding: 18px;
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover
+        {
+            color: goldenrod;
+        }
+
+        main
+        {
+            padding: 12px;
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            column-gap: 12px;
+            height: 100vh;
+        }
+
+        #pictureBox > img
+        {
+            /* background-color: #990000; */
+            /* overflow: hidden; */
+            object-fit: fill;
+            width: 100%;
+            height: 100%;
+        }
+
+        #contactForm
+        {
+            /* background-color: blue; */
+            color: white;
+            display: flex;
+            font-size: 18px;
+            width:100%;
+        }
+
+        fieldset
+        {
+            border: none;
+            width: 100%;
+        }
+
+        input
+        {
+            margin: 8px;
+            width: 60%;
+        }
+
+        @media screen and (max-width: 800px)
+        {
+            #pictureBox
+            {
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+<!-- --------------- -->
+<body>
+    <header>
+        <a href="blueSky.html">
+        <h3>Legacy of the World</h3>
+        <h5>Playing Mekk-Knights in Yu-Gi-Oh</h5>
+        </a>
+    </header>
+
+    <main>
+        <div id="pictureBox"><img src="Images/serziel.png"></div>
+        <div id="contactForm">
+            <form action="mailto:morning.star@emz.com" method="get">
+                <fieldset>
+                    <label>Name:</label><input type="text"/><br>
+                    <label>Email:</label><input type="email"/><br>
+                    <label for="subject">Subject:</label>
+                    <select name="subject" id="subject">
+                        <option value="Mekk-Knights">Mekk-Knights</option>
+                        <option value="yugioh">Yu-Gi-Oh</option>
+                        <option value="personal">Personal</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br>
+                    <label>Message:</label><br>
+                    <textarea name="message" rows="15" cols="70"></textarea><br>
+                    <input type="submit" value="Submit">
+                    
+                   
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer><a href="blueSky.html">RETURN</a></footer>
+</body>
+</html>
